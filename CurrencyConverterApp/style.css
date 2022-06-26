@@ -1,5 +1,6 @@
 /* login-username--input */
-.converter-dropdown-list-displayfrom--input
+.converter-dropdown-list--container
 {
-    
+    display: flex;
+    flex-direction: column;
 }
