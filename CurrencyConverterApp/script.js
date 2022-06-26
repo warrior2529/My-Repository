@@ -1,4 +1,4 @@
-const dropDownListSelect = document.querySelector(".dropdown-list--select");
+const dropDownListSelect = document.querySelector(".dropdown-list-convertedfrom--select");
 const displayConvertion = document.querySelector(".display-convertion");
 
 

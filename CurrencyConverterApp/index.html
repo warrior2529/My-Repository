@@ -9,17 +9,19 @@
 </head>
 <body>
     <form class="converter--container">
-        <div class="converter-home-header--container">
+        <div class="converter-home-header--container">Currency Converter
         </div>
-        <div class="converter-dropdown--container">
             <div class="converter-dropdown-list--container">
-                <select class="dropdown-list--select">
-                    <option value="USD">USD
-                    </option>
+                <select class="dropdown-list-convertedfrom--select">
+                    <option value="USD">USD</option>
                 </select>
-                <div class="display-convertion">1</div>
+                <label for="" class="converter-dropdown-list-intext--lab">to</label>
+                <select class="dropdown-list-converterto--select">
+                    <option value="USD">USD</option>
+                </select>
+                <input type="text" class="converter-dropdown-list-displayfrom--input">
+                <label for="" class="converter-dropdown-list-displayto--label"></label>
             </div>
-        </div>
         <div class="converter-down-bar--container"></div>
         
     </form>
