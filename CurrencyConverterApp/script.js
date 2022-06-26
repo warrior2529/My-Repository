@@ -1,5 +1,7 @@
-const dropDownListSelect = document.querySelector(".dropdown-list-convertedfrom--select");
-const displayConvertion = document.querySelector(".display-convertion");
+const dropDownListFromSelect = document.querySelector(".dropdown-list-convertedfrom--select");
+const dropDownListToSelect = document.querySelector(".dropdown-list-convertedto--select");
+const displayConvertion = document.querySelector(".converter-dropdown-list-displayto--label");
+const converterDropdownListDisplayfromInput = document.querySelector(".converter-dropdown-list-displayfrom--input");
 
 
 
@@ -8,7 +10,8 @@ const generateHTML = function (value) {
     for (let currency of value.entries()){
         markup+=`<option value="${currency[0]}">${currency[0]}</option><label>`
     }
-    dropDownListSelect.insertAdjacentHTML("beforeend",markup);
+    dropDownListFromSelect.insertAdjacentHTML("beforeend", markup);
+    dropDownListToSelect.insertAdjacentHTML("beforeend",markup);
 }
 
 const currencies = {
@@ -16,6 +19,7 @@ const currencies = {
     "date": "2021-05-10",
     "timestamp": 1620652500,
     "exchange_rates": {
+        "USD": 1,
         "EUR": 0.82176,
         "JPY": 108.727093,
         "BGN": 1.607199,
@@ -55,7 +59,7 @@ const currencyMap = new Map(Object.entries(currencies.exchange_rates));
 generateHTML(currencyMap);
 // console.log();
 
-dropDownListSelect.addEventListener("input", function (e) {
+converterDropdownListDisplayfromInput.addEventListener("input", function (e) {
     e.preventDefault();
-    displayConvertion.textContent=currencies.exchange_rates[dropDownListSelect.value];
+    displayConvertion.textContent=(Number(currencies.exchange_rates[dropDownListFromSelect.value])*Number(currencies.exchange_rates[dropDownListToSelect.value])*converterDropdownListDisplayfromInput.value).toFixed(2);
 });
